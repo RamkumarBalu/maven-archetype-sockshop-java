@@ -1,11 +1,11 @@
 
 #In order to execute the application we need maven repository to download in built kuberantes api jar.
 
-# Once maven dowloaded set the environment variable like below
+## Once maven dowloaded set the environment variable like below
 
-#Variable Home : MAVEN_HOME
+# Variable Home : MAVEN_HOME
 
-#Variable name: C:\Program Files\Maven\apache-maven-3.8.6
+### Variable name: C:\Program Files\Maven\apache-maven-3.8.6
 
 #Below are the path for variiable to set all out necessary path like docker, minikube and Maven
 
