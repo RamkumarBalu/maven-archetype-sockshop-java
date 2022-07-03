@@ -52,6 +52,7 @@ public class App {
 		/* Namespace Difference with Details */
 		V1PodList list = api.listPodForAllNamespaces(null, null, null, null, null, null, null, null, null, null);
 		App.printNameSpaceStatus(list);
+		App.printNameSpaceStatus1(list);
 	}
 
 	private static void printDeployment(List<V1Deployment> deploymentsItems) {
@@ -63,7 +64,7 @@ public class App {
 		// Deployment List
 		System.out.println(
 				"-----------------------------------------------------------------------------------------------------------------------");
-		System.out.println("Service \t\t | Version \t\t | Date Deployment was Updated");
+		System.out.println("Service \t\t\t\t | Version \t\t\t | Date Deployment was Updated");
 		System.out.println(
 				"-----------------------------------------------------------------------------------------------------------------------");
 		for (V1Deployment item : deploymentsItems) {
@@ -78,25 +79,45 @@ public class App {
 	}
 
 	private static void printNameSpaceStatus(V1PodList list) {
+
+		// Printing Name Space
+		System.out.println("\n\n####################################################" + "Sock Shop"
+				+ "#######################################################");
+		System.out.println(
+				"-----------------------------------------------------------------------------------------------------------------------");
+		System.out.println("Name Of the Deployment \t\t | Status of the Deployment");
+		System.out.println(
+				"-----------------------------------------------------------------------------------------------------------------------");
 		for (int i = 0; i < list.getItems().size(); i++) {
-			if (list.getItems().get(i).getMetadata().getNamespace().equals("sock-shop")
-					|| list.getItems().get(i).getMetadata().getNamespace().equals("sock-shop1")) {
-				// Printing Name Space
-				System.out.println("\n\n####################################################"
-						+ list.getItems().get(i).getMetadata().getNamespace()
-						+ "#######################################################");
+			if (list.getItems().get(i).getMetadata().getNamespace().equals("sock-shop")) {
+				System.out.println(list.getItems().get(i).getMetadata().getName() + "\t\t\t\t\t | "
+						+ list.getItems().get(i).getStatus().getPhase());
 				System.out.println(
 						"-----------------------------------------------------------------------------------------------------------------------");
-				System.out.println("Name Of the Deployment \t\t | Status of the Deployment");
+			}
+
+		}
+	}
+	private static void printNameSpaceStatus1(V1PodList list) {
+
+		// Printing Name Space
+		System.out.println("\n\n####################################################" + "Sock Shop1"
+				+ "#######################################################");
+		System.out.println(
+				"-----------------------------------------------------------------------------------------------------------------------");
+		System.out.println("Name Of the Deployment \t\t | Status of the Deployment");
+		System.out.println(
+				"-----------------------------------------------------------------------------------------------------------------------");
+		for (int i = 0; i < list.getItems().size(); i++) {
+			if (list.getItems().get(i).getMetadata().getNamespace().equals("sock-shop1")) {
+				System.out.println(list.getItems().get(i).getMetadata().getName() + "\t\t\t\t\t | "
+						+ list.getItems().get(i).getStatus().getPhase());
 				System.out.println(
 						"-----------------------------------------------------------------------------------------------------------------------");
-				for (int j = 0; j < list.getItems().size(); j++) {
-					System.out.println(list.getItems().get(j).getMetadata().getName() + "\t\t\t\t\t | " + list.getItems().get(j).getStatus().getPhase());
-					System.out.println(
-							"-----------------------------------------------------------------------------------------------------------------------");
-				}
 			}
 
 		}
 	}
 }
+
+//|| list.getItems().get(i).getMetadata().getNamespace().equals("sock-shop1"))
