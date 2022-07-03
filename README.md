@@ -53,7 +53,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd maven-archetype-sockshop-java/src/main/java/com/kubernetes/
+  cd maven-archetype-sockshop-java
 ```
 
 ## Deployment
@@ -71,6 +71,16 @@ mvn build
 ```bash
 mvn exec:java -Dexec.mainClass="com.kubernetes"
 ```
+
+## Sample Output
+
+Files in the git repo
+
+```bash
+output1.out - displays the name of the service, version and deployment date.
+output2.out - displays the name of the service and status including namespace differences.
+```
+
 
 ## Author
 
