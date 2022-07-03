@@ -1,22 +1,32 @@
 
-# Sock Shop
+## Documentation
 
-Below are the software and tools need to execute the project.
-
-Setup a basic kubernetes cluster for testing and install an example application on it.
-
-For Window - Minikube can be installed - https://github.com/kubernetes/minikube
-
-Deploy the Socks Shop as a microservices based test application - https://microservices-demo.github.io/
-
-In order to execute the application we need maven repository to download in built kuberantes api jar.
+[Documentation](https://github.com/RamkumarBalu/maven-archetype-sockshop-java/blob/main/README.md)
 
 
+# Sock Shop Sample 
 
+This project uses Kuberenetes API provides a table summary with following details:
+
+● Name of deployments
+● Images of deployment  
+● Date deployment updated
+
+Tool gives the difference between two namespaces showing when some services are missing or running different image versions.  
 
 Before execute this java code docker and minikuber must be in start status and if we want see the deployments on dashboard please launch minikube dashboard.
+## Installation
 
-And I attached the output for this test applcation inside the git repositry.
+Install the following packages
+
+```bash
+  minikube
+  eclipse
+  docker
+  git
+  maven
+```
+    
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your System.
@@ -32,6 +42,20 @@ Variable value: 'C:\Program Files (x86)\CommonFiles\Oracle\Java\javapath;C:\tool
 
 
 
+## Pull Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/RamkumarBalu/maven-archetype-sockshop-java
+```
+
+Go to the project directory
+
+```bash
+  cd maven-archetype-sockshop-java/src/main/java/com/kubernetes/
+```
+
 ## Deployment
 
 To deploy this project run
@@ -42,8 +66,13 @@ mvn install
 mvn build
 ```
 
+## Run Locally
 
-## Authors
+```bash
+mvn exec:java -Dexec.mainClass="com.kubernetes"
+```
+
+## Author
 
 - [@RamkumarBalu](https://www.github.com/RamkumarBalu)
 
